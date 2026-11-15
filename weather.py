@@ -90,7 +90,7 @@ temp_f = round(temp_c * 9/5 + 32, 1)
 log_df = pd.DataFrame({
     "date": [str(today)],
     "time": [current_time],
-    "temperature_2m": [current_temp]
+    "temperature_2m": [current_temp],
     "temp_f": [temp_f]
 })
 log_file = "daily_log.csv"
