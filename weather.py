@@ -81,10 +81,17 @@ forecast_df = pd.DataFrame({
     "max_temp": forecast_data["daily"]["temperature_2m_max"],
     "min_temp": forecast_data["daily"]["temperature_2m_min"]
 })
+current_temp = current_data["current"]["temperature_2m"]
+current_time = current_data["current"]["time"]
+
+temp_c = current_temp
+temp_f = round(temp_c * 9/5 + 32, 1)
+
 log_df = pd.DataFrame({
     "date": [str(today)],
     "time": [current_time],
     "temperature_2m": [current_temp]
+    "temp_f": [temp_f]
 })
 log_file = "daily_log.csv"
 log_df.to_csv(
